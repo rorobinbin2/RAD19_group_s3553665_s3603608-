@@ -1,8 +1,8 @@
 require 'test_helper'
-  .
-  .
-  .
-  test "valid signup information" do
+
+class UsersSignupTest < ActionDispatch::IntegrationTest
+
+   test "valid signup information" do
     get signup_path
     assert_difference 'User.count', 1 do
       post users_path, params: { user: { name:  "Example User",
@@ -12,6 +12,6 @@ require 'test_helper'
     end
     follow_redirect!
     assert_template 'users/show'
-    assert_not flash.FILL_IN
+    assert_not flash.empty?
   end
 end
