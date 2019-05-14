@@ -8,4 +8,12 @@
       </h1>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.courses.any? %>
+      <h3>Course (<%= @user.courses.count %>)</h3>
+      <ol class="courses">
+        <%= render @courses %>
+      </ol>
+    <% end %> 
+  </div>    
 </div>

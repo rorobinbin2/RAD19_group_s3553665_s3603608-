@@ -1,0 +1,16 @@
+<%= form_for(@course) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
+
+  <%= f.label :prerequisite %>
+  <%= f.text_field :prerequisite, class: 'form-control' %>
+
+  <%= f.label :category %>
+  <%= f.text_field :category, class: 'form-control' %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location, class: 'form-control' %>
+
+  <%= f.submit "Add course", class: "btn btn-primary" %>
+<% end %>
