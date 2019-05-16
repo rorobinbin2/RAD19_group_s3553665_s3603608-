@@ -1,8 +1,0 @@
-<li id="course-<%= course.id %>">
-  <%= link_to gravatar_for(course.user, size: 50), course.user %>
-  <span class="name"><%= link_to course.name, course.name %></span>
-  <span class="prerequisite"><%= course.prerequisite %></span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(.created_at) %> ago.
-  </span>
-</li>
