@@ -1,5 +1,16 @@
 <%= form_for(@course) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control' %>
 
+  <%= f.label :prerequisite %>
+  <%= f.text_field :prerequisite, class: 'form-control' %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description, class: 'form-control' %>
+  
+  Add category check_boxes +++
+  
+  Add location check_boxes
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

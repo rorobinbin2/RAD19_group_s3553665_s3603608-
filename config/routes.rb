@@ -10,9 +10,14 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get  '/addcourse',  to: 'courses#new'
   post  '/addcourse',  to: 'courses#create'
-  
+  get   '/addcategory', to: 'categories#new'
+  post  '/addcategory', to: 'categories#create'
+  get   '/addlocation', to: 'locations#new'
+  post  '/addlocation', to: 'locations#create'
 
   
   resources :users
   resources :courses
+  resources :categories
+  resources :locations
 end

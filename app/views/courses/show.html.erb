@@ -1,0 +1,24 @@
+<% provide(:title, @course.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="course_info">
+      <h3>
+        <%= @course.name %>
+      </h3>
+      <h3>
+        Prerequisite: 
+        <%= @course.prerequisite %>
+      </h3>
+      <div class="center jumbotron">
+      <li>
+        Category:
+        <%= @course.category %>
+      </li>
+      <li>
+        Location:
+        <%= @course.location %>
+      </li>
+      </div>
+    </section>
+  </aside>
+</div>

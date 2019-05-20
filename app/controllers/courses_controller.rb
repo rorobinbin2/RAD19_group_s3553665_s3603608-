@@ -13,7 +13,7 @@ class CoursesController < ApplicationController
   end
   
   def create
-    @couse = Course.new()
+    @course = Course.new()
     if @course.save
       flash[:success] = "Created new course!"
       redirect_to rool_url

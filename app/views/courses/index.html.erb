@@ -1,8 +1,24 @@
 <% provide(:title, 'All courses') %>
-<h1>All users</h1>
+<h1>Courses</h1>
 
-<ul class="users">
-  
-  
-  <h2> test </h2>
+<ul class="courses">
+  <% @courses.each do |course| %>
+    <h2>
+      Course name:
+      <%= link_to course.name, course %>
+    </h2>
+    <h2>
+        Course category:
+        <%= link_to course.category, course%>
+    </h2>
+    <h2>
+        Course location:
+        <%= link_to course.location, course%>
+    </h2>
+    <h2>
+        Created at:
+        <%= link_to course.created_at, course%>
+    </h2>
+  <% end %>
+  </div>
 </ul>
