@@ -4,14 +4,14 @@ one:
   name: MyString
   prerequisite: MyString
   description: MyText
-  category: MyString
-  location: MyString
+  category: one
+  location: one
   user: one
 
 two:
   name: MyString
   prerequisite: MyString
   description: MyText
-  category: MyString
-  location: MyString
+  category: two
+  location: two
   user: two

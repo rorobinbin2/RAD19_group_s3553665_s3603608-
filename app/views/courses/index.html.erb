@@ -1,3 +1,4 @@
+    
 <% provide(:title, 'All courses') %>
 <h1>Courses</h1>
 
@@ -9,16 +10,22 @@
     </h2>
     <h2>
         Course category:
-        <%= link_to course.category, course%>
+        <%= link_to course.category.name, course.category%>
     </h2>
     <h2>
         Course location:
-        <%= link_to course.location, course%>
+        <%= link_to course.location.name, course.location%>
     </h2>
     <h2>
         Created at:
         <%= link_to course.created_at, course%>
     </h2>
+    <li>
+    <%= link_to gravatar_for(course.user, size: 100), course.user %>
+
+      Coordinator name:
+      <%= link_to course.user.name, course.user %>
+    </li>
   <% end %>
   </div>
 </ul>
