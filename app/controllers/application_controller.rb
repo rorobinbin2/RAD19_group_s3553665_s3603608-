@@ -10,5 +10,10 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end  
-  
+    
+  # for dropdown buttons
+  def button
+    @categories = Category.all
+    @locations = Location.all
+  end
 end

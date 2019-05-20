@@ -10,10 +10,14 @@ class CoursesController < ApplicationController
 
   def new
     @course = Course.new
+    @categories = Category.all
+    @locations = Location.all
   end
   
   def create
-    @course = Course.new()
+    @course = current_user.courses.new(course_params)
+    @categories = Category.all
+    @locations = Location.all
     if @course.save
       flash[:success] = "Created new course!"
       redirect_to rool_url
@@ -38,8 +42,8 @@ class CoursesController < ApplicationController
   
   private
   
-    # def user_params
-    #   params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    # end
+    def course_params
+      params.require(:course).permit(:name, :prerequisite, :description, :category, :location, :user)
+    end
 
 end
