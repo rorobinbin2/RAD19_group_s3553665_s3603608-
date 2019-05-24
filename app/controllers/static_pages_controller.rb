@@ -1,6 +1,8 @@
 class StaticPagesController < ApplicationController
 
   def home
+    @categories = Category.all
+    @locations = Location.all
   end
 
   def help

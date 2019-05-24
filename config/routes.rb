@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post  '/addcategory', to: 'categories#create'
   get   '/addlocation', to: 'locations#new'
   post  '/addlocation', to: 'locations#create'
+  post '/courses/like', to:'courses#hitlike'
+  post '/courses/dislike', to:'courses#hitdislike'
 
   
   resources :users

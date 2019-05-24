@@ -1,24 +1,36 @@
 <%= form_for(@course) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
-
+  
   <%= f.label :prerequisite %>
   <%= f.text_field :prerequisite, class: 'form-control' %>
+  
+  <%= f.label :category_id %>
+  <%= f.text_field :category_id, class: 'form-control' %>
+  
+  <%= f.label :location_id %>
+  <%= f.text_field :location_id, class: 'form-control' %>
 
   <%= f.label :description %>
   <%= f.text_area :description, class: 'form-control' %>
   
-  <%= f.label :category %>
-  <% @categories.each do |category| %>
-  <%= check_box_tag :category, 1, false, data: { "toggle-completed" => '' } %>
-  <%= category.name %> 
-  <% end %>
-  <h2></h2>
-  <%= f.label :location %>
-  <% @locations.each do |location| %>
-  <%= check_box_tag :location, 1, false, data: { "toggle-completed" => '' } %>
-  <%= location.name %> 
-  <% end %>
+  <!--<%= f.label :category_id %>-->
+  <!--<% @categories.each do |category| %>-->
+  <!--<%= f.check_box :category_id, {multiple: true}, category.id, nil %>-->
+  <!--<%= category.name %> -->
+  <!--<% end %>-->
 
+
+  <!--<%= f.label :location_id %>-->
+  <!--<% @locations.each do |location| %>-->
+  <!--<%= f.check_box :location_id, {multiple: true}, location.id, nil %>-->
+  <!--<%= location.name %> -->
+  <!--<% end %>-->
+  
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  
+  <span class="picture">
+    <%= f.file_field :picture %>
+  </span>
+  
 <% end %>

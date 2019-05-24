@@ -11,9 +11,4 @@ class ApplicationController < ActionController::Base
       end
     end  
     
-  # for dropdown buttons
-  def button
-    @categories = Category.all
-    @locations = Location.all
-  end
 end

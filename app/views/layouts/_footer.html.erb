@@ -1,12 +1,59 @@
-<footer class="footer">
-  <small>
-<p> Add footer here </p>
-  </small>
+<footer class="footer" style="margin-top: 50px;">
+ 
+ 
+
+ 
   <nav>
     <ul>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
+      <div align="left",style="width:20%;">
+            <h4><strong>Contact us</strong></h3>
+            <%= form_for(:feedback, url:"/message") do |f| %>
+                <%= f.text_field:name,:placeholder=>"name",:style=>"
+                border-color: #878787;border-style: solid;border-top-width: 0px;
+                border-right-width: 0px;border-bottom-width: 1px;
+                     border-left-width: 0px;background:inherit;" %>
+                <%= f.text_field:email,:placeholder=>"email",:style=>"
+                border-color: #878787;border-style: solid;border-top-width: 0px;
+                border-right-width: 0px;border-bottom-width: 1px;
+                     border-left-width: 0px;background:inherit;" %>
+                <%= f.text_area:message,:placeholder=>"message",:style=>"
+                border-color: #878787;border-style: solid;border-top-width: 0px;
+                border-right-width: 0px;border-bottom-width: 1px;
+                     border-left-width: 0px;background:inherit;" %>
+                     <br>
+                <%= f.submit "Send", class:"btn" %>
+            <% end %>
+            <div style="margin:20px 0;">
+                <p style="margin:0">Tel:0123456789</p>
+                <p style="margin:0">Fax:0123456</p>
+                <p style="margin:0">junjiang.jiang@rmit.edu.au</p>  
+            </div>
+        </div>   
+         <div align="justify">
+      <div style="width:20%;display:flex;flex-direction:column">
+            <h4><strong>General inquires</strong></h3>
+            <a href="false;">Andy Song</a>
+            <a href="javascript(0);">Junliang Jiang</a>
+            <a href="javascript(0);">Ali</a>
+        
+        </div>
+        <div style="width:20%;display:flex;flex-direction:column">
+            <h4><strong>Useful Links</strong></h3>
+            <li><a href="https://www.rmit.edu.au/study-with-us">RMIT Course</a></li>
+            <li><a href="https://www.rmit.edu.au/students/support-and-facilities/it-services-for-students/service-and-support-centre">RMIT Help Desk</a></li>
+            <li><a href="https://www.rmit.edu.au/study-with-us/international-students">RMIT International</a></li>
     
+        </div>    
+        <div style="width:20%;display:flex;flex-direction:column">
+            <h4><strong>Media</strong></h3>
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="https://www.linkedin.com/"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="https://github.com/"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+      </div>  
     </ul>
   </nav>
 </footer>

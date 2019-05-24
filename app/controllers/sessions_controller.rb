@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
 
   def new
+    @categories = Category.all
+    @locations = Location.all
   end
 
   def create
