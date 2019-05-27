@@ -6,6 +6,8 @@ class SessionsController < ApplicationController
   end
 
   def create
+    @categories = Category.all
+    @locations = Location.all
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
@@ -18,6 +20,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    @categories = Category.all
+    @locations = Location.all
     log_out
     flash[:success] = "You have logged out !"
     redirect_to root_url

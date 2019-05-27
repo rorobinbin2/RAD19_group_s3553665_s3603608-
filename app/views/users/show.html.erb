@@ -3,9 +3,22 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
+        Coordinator:
         <%= @user.name %>
       </h1>
+        <%= gravatar_for @user %>
     </section>
+    <% @user.courses.each do |course| %>
+    <div class="border" style="padding:30px;width:500px;background-color:lightgrey; ">
+    
+    <h2>
+      Course name:
+      <%= link_to course.name, course %>
+    </h2>
+    <h2>
+      Course prerequisite:
+      <%= link_to course.prerequisite, course %>
+    </h2>  
+    <% end %>
   </aside>
 </div>

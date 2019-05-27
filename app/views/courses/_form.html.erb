@@ -5,27 +5,27 @@
   <%= f.label :prerequisite %>
   <%= f.text_field :prerequisite, class: 'form-control' %>
   
-  <%= f.label :category_id %>
-  <%= f.text_field :category_id, class: 'form-control' %>
+  <!--<%= f.label :category_id %>-->
+  <!--<%= f.text_field :category_id, class: 'form-control' %>-->
   
-  <%= f.label :location_id %>
-  <%= f.text_field :location_id, class: 'form-control' %>
+  <!--<%= f.label :location_id %>-->
+  <!--<%= f.text_field :location_id, class: 'form-control' %>-->
 
   <%= f.label :description %>
   <%= f.text_area :description, class: 'form-control' %>
   
-  <!--<%= f.label :category_id %>-->
-  <!--<% @categories.each do |category| %>-->
-  <!--<%= f.check_box :category_id, {multiple: true}, category.id, nil %>-->
-  <!--<%= category.name %> -->
-  <!--<% end %>-->
+  <%= f.label :category_id %>
+  <% @categories.each do |category| %>
+  <%= f.check_box :category_id, {multiple: false}, category.id, nil %>
+  <%= category.name %> 
+  <% end %>
 
 
-  <!--<%= f.label :location_id %>-->
-  <!--<% @locations.each do |location| %>-->
-  <!--<%= f.check_box :location_id, {multiple: true}, location.id, nil %>-->
-  <!--<%= location.name %> -->
-  <!--<% end %>-->
+  <%= f.label :location_id %>
+  <% @locations.each do |location| %>
+  <%= f.check_box :location_id, {multiple: false}, location.id, nil %>
+  <%= location.name %> 
+  <% end %>
   
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   

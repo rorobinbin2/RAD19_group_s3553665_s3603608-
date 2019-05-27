@@ -1,10 +1,11 @@
 <% provide(:title, @course.name) %>
+
+<div style="text-align:center">
+    <h1><%= @course.name %> </h1>
+  <hr>
+  
 <div class="row">
   <aside class="col-md-4">
-    <section class="course_info">
-      <h3>
-        <%= @course.name %>
-      </h3>
       <h3>
         Prerequisite: 
         <%= @course.prerequisite %>
@@ -12,13 +13,27 @@
       <div class="center jumbotron">
       <li>
         Category:
-        <%= @course.category.name %>
+        <%= link_to @course.category.name, @course.category %>
       </li>
       <li>
         Location:
-        <%= @course.location.name %>
+        <%= link_to @course.location.name, @course.location %>
       </li>
       </div>
-    </section>
+      <% if current_user.admin? || current_user?(course.user) %>
+        <%= link_to "Edit", edit_course_path(@course), class: "btn btn-primary" %>
+      <% end %>
+      <% if current_user.admin? %>
+        <%= link_to "Delete", @course, method: :delete, class: "btn btn-primary",
+                                       data: { confirm: "You sure?" } %>
+      <% end %>
   </aside>
+    
+      <%= link_to gravatar_for(@course.user, size: 150), @course.user %>
+    
+    <h2>
+     Coordinator name: <%= link_to @course.user.name, @course.user %>
+    </h2>
+      
 </div>
+  <%= link_to "Return to all courses", courses_path, class: "btn btn-lg btn-primary" %>

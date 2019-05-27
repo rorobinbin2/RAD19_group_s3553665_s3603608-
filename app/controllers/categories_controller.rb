@@ -13,6 +13,13 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
   
+  def show
+    @categories = Category.all 
+    @locations = Location.all
+    @courses = Course.all
+    @category = Category.find(params[:id])
+  end
+  
   def create
     @category = Category.new(category_params)
     if @category.save

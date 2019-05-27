@@ -1,12 +1,41 @@
 <% provide(:title, @category.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="course_info">
-      <h3>
-        <%= Course with @category.name %>
-      </h3>
-    <ul class="courses">    
-    <% @courses.each do |course| %>
+
+<div style="text-align:center">
+    <h1>Courses scheduled in category <%= @category.name %> </h1>
+  <hr>
+</div>
+
+    <div class="tab">
+      <ul class="nav navbar-nav">
+       
+       <li><a href="/courses">Course</a></li>
+       <li><a href="/users">Coordinator</a></li>
+      </ul>
+    </div>
+    
+    
+  </div>
+  
+   
+
+<ul class="courses">
+  <% @category.courses.each do |course| %>
+  <div align="left">
+   <div style="display:flex;margin:40px;">
+    <div style="display:flex;flex-direction:column;width:200px">
+      
+         <li>
+    <%= link_to gravatar_for(course.user, size: 150), course.user %>
+    </li>
+    <h2>
+     Coordinator name: <%= link_to course.user.name, course.user %>
+    </h2>
+      
+    </div>
+
+    
+    <div class="border" style="padding:30px;width:500px;background-color:lightgrey; ">
+    
     <h2>
       Course name:
       <%= link_to course.name, course %>
@@ -23,12 +52,24 @@
         Created at:
         <%= link_to course.created_at, course%>
     </h2>
-    <li>
-    <%= link_to gravatar_for(course.user, size: 100), course.user %>
+    
+    
 
-      Coordinator name:
-      <%= link_to course.user.name, course.user %>
-    </li>
-  <% end %>
+  <div style="text-align:right">
+        <% if logged_in? %>
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe,
+          courses_like_path(:course_name =>  course.name), :method => :post %>
+         
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe,
+          courses_dislike_path(:course_name =>  course.name), :method => :post %>
+        
+        <% else %>  
+
+        <% end %>
+
+       </div>
   </div>
+  </div>
+ 
+  <% end %>
 </ul>
