@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
-  before_action :logged_in_user, only: [:create, :edit, :update] 
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: [:edit, :update, :destroy]
+  before_action :logged_in_user, only: [:hitlike, :hitdislike, :create, :edit, :update] 
+  before_action :correct_user,   only: [ :edit, :update]
+  before_action :admin_user,     only: [ :edit, :update, :destroy]
   
   
   def index
@@ -10,10 +10,17 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end  
   
+  def reload
+    @course = Course.all
+    redirect_back(fallback_location: root_path)
+    puts(@course)
+  end  
+  
   def show
     @categories = Category.all
     @locations = Location.all
     @course = Course.find(params[:id])
+    @courses = Course.all
   end
 
   def new
@@ -26,6 +33,8 @@ class CoursesController < ApplicationController
     @course = current_user.courses.new(course_params)
     @categories = Category.all
     @locations = Location.all
+    @course.like = 0
+    @course.dislike = 0
     if @course.save
       flash[:success] = "Created new course!"
       redirect_to courses_url
@@ -62,34 +71,24 @@ class CoursesController < ApplicationController
     @course = Course.where("name = ?",params[:course_name]).first
     @course.like = @course.like + 1
     @course.save
-    datareturn
+    reload
   end
   
   def hitdislike 
     @course = Course.where("name = ?",params[:course_name]).first
     @course.dislike = @course.dislike + 1
     @course.save
-    datareturn
+    reload
   end
   
-  def reset
-    @course = Course.find params[:id]
-    if @course.like.zero? && @course.dislike.zero?
-      redirect_to controller: 'admin', action: 'courses'
-      flash[:notice] = 'The selected course currently has no votes to reset.'
-    else
-      data = Hash.new
-      data[:like] = 0
-      data[:dislike] = 0
-
-      if @course.update data
-        redirect_to controller: 'admin', action: 'courses'
-        flash[:success] = 'Success, the course\'s votes has been reset !.'
-      else
-        redirect_to controller: 'admin', action: 'courses'
-        flash[:notice] = 'Something went wrong, try again '
-      end
-    end
+  def resetvote
+    @course = Course.where("name = ?",params[:course_name]).first
+    @course.like = 0
+    @course.dislike = 0
+    @course.save
+    flash[:success] = 'Success, the course\'s votes has been reset !.'
+    reload
+    
   end
   
   
@@ -98,7 +97,6 @@ class CoursesController < ApplicationController
   
     def course_params
       params.require(:course).permit(:name, :prerequisite, :description, :category_id , :location_id )
-      # params.require(:course).permit(:name, :prerequisite, :description, :category_id , :location_id, :picture)
     end
     
     def correct_user

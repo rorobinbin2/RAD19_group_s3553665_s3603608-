@@ -9,8 +9,8 @@
         <%= gravatar_for @user %>
     </section>
     <% @user.courses.each do |course| %>
-    <div class="border" style="padding:30px;width:500px;background-color:lightgrey; ">
     
+    <div class="border" style="padding:30px;width:500px;background-color:lightgrey; ">
     <h2>
       Course name:
       <%= link_to course.name, course %>
@@ -19,6 +19,31 @@
       Course prerequisite:
       <%= link_to course.prerequisite, course %>
     </h2>  
+    <h2>
+      Created at:
+      <%= link_to course.created_at, course %>
+    </h2>
+        <%= link_to "Edit", edit_course_path(course), class: "btn btn-primary" %>
+    <div style="text-align:right">
+        <% if logged_in? %>
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe,
+          courses_like_path(:course_name =>  course.name), :method => :post %>
+        <%= course.like %>
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe,
+          courses_dislike_path(:course_name =>  course.name), :method => :post %>
+        <%= course.dislike %>
+        <% else %>  
+            <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe %>
+        <%= course.like %>
+            <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe %>
+        <%= course.dislike %>
+        <% end %>
+
+       </div>
+    </div>
+    
+    <span style="display:inline-block; width: 100;"></span>
     <% end %>
+
   </aside>
 </div>

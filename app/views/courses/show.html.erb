@@ -4,36 +4,66 @@
     <h1><%= @course.name %> </h1>
   <hr>
   
-<div class="row">
-  <aside class="col-md-4">
+<ul class="courses">
+  <div align="left">
+   <div style="display:flex;margin:50px;">
+    <div style="display:flex;flex-direction:column;width:200px">
+      <li>
+    <%= link_to gravatar_for(@course.user, size: 150), @course.user %>
+    </li>
+    <h2>
+     Coordinator name: <%= link_to @course.user.name, @course.user %>
+    </h2>
+    </div>
+    
+    <div class="border" style="padding:30px;width:500px;background-color:lightgrey; ">
       <h3>
         Prerequisite: 
         <%= @course.prerequisite %>
       </h3>
       <div class="center jumbotron">
-      <li>
+      <h2>
         Category:
         <%= link_to @course.category.name, @course.category %>
-      </li>
-      <li>
+      </h2>
+      <h2>
         Location:
         <%= link_to @course.location.name, @course.location %>
-      </li>
-      </div>
-      <% if current_user.admin? || current_user?(course.user) %>
+      </h2>
+      <h2>
+        Description:
+        <%= @course.description %>
+      </h2> 
+      <% if logged_in? %>
+      <% if current_user.admin? || current_user?(@course.user) %>
         <%= link_to "Edit", edit_course_path(@course), class: "btn btn-primary" %>
       <% end %>
       <% if current_user.admin? %>
         <%= link_to "Delete", @course, method: :delete, class: "btn btn-primary",
                                        data: { confirm: "You sure?" } %>
+        <%= link_to "Reset votes", courses_vote_path(:course_name =>  @course.name), :method => :post, class: "btn btn-primary",
+                                       data: { confirm: "You sure?" } %>
       <% end %>
+    <% end %>  
+      <div style="text-align:right">
+        <% if logged_in? %>
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe,
+          courses_like_path(:course_name =>  @course.name), :method => :post %>
+        <%= @course.like %>
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe,
+          courses_dislike_path(:course_name =>  @course.name), :method => :post %>
+        <%= @course.dislike %>
+        <% else %>  
+            <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe %>
+        <%= @course.like %>
+            <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe %>
+        <%= @course.dislike %>
+        <% end %>
+
+       </div>
+      </div>      
+      </div>
   </aside>
-    
-      <%= link_to gravatar_for(@course.user, size: 150), @course.user %>
-    
-    <h2>
-     Coordinator name: <%= link_to @course.user.name, @course.user %>
-    </h2>
-      
 </div>
+  </div>  
   <%= link_to "Return to all courses", courses_path, class: "btn btn-lg btn-primary" %>

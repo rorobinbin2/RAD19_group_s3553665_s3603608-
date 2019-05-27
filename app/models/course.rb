@@ -9,4 +9,5 @@ class Course < ApplicationRecord
   validates :prerequisite,  presence: true
   validates :category,  presence: true
   validates :location,  presence: true
+  # validates_uniqueness_of :user_id, :scope => [:like, :dislike]
 end

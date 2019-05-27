@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post  '/addlocation', to: 'locations#create'
   post '/courses/like', to:'courses#hitlike'
   post '/courses/dislike', to:'courses#hitdislike'
+  post '/courses/vote', to:'courses#resetvote'
+  post '/feedback', to:'feedbacks#create'
 
   
   resources :users

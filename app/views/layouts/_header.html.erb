@@ -8,25 +8,6 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
         
-        <!--FIX HERE-->
-        <!--<li class="dropdown">-->
-        <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
-        <!--     Category <b class="caret"></b>-->
-        <!--  </a>-->
-          
-        <!--  <ul class="dropdown-menu">-->
-        <!--    <li><%= link_to "category", categories_path %> </li>-->
-        <!--  </ul>  -->
-        <!--</li>  -->
-        
-        <!--<li class="dropdown">-->
-        <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown">-->
-        <!--     Location <b class="caret"></b>-->
-        <!--  </a>-->
-        <!--  <ul class="dropdown-menu">-->
-        <!--    <li><%= link_to "Location", locations_path %></li>-->
-        <!--  </ul>  -->
-        <!--</li>  -->
         <%= render 'categories/menu' %>
         <%= render 'locations/menu' %>
         <% if logged_in? %>

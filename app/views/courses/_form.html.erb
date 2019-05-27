@@ -4,27 +4,26 @@
   
   <%= f.label :prerequisite %>
   <%= f.text_field :prerequisite, class: 'form-control' %>
-  
-  <!--<%= f.label :category_id %>-->
-  <!--<%= f.text_field :category_id, class: 'form-control' %>-->
-  
-  <!--<%= f.label :location_id %>-->
-  <!--<%= f.text_field :location_id, class: 'form-control' %>-->
 
   <%= f.label :description %>
   <%= f.text_area :description, class: 'form-control' %>
   
   <%= f.label :category_id %>
   <% @categories.each do |category| %>
+  <label class="checkbox">
   <%= f.check_box :category_id, {multiple: false}, category.id, nil %>
-  <%= category.name %> 
+      - 
+  <%= category.name %>
+  </label>
   <% end %>
-
 
   <%= f.label :location_id %>
   <% @locations.each do |location| %>
+  <label class="checkbox">
   <%= f.check_box :location_id, {multiple: false}, location.id, nil %>
-  <%= location.name %> 
+      -
+  <%=   location.name %> 
+  </label>
   <% end %>
   
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>

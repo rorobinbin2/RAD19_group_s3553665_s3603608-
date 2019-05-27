@@ -26,5 +26,11 @@
       Coordinator name:
       <%= link_to user.name, user %>
     </h2>
+    <h2>
+    <% if current_user.admin? && !current_user?(user) %>
+      <%= link_to "Delete", user, method: :delete, class: "btn btn-primary",
+                                       data: { confirm: "You sure?" } %>
+    </h2>
+  <% end %>
   <% end %>
 </ul>

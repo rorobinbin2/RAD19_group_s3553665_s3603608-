@@ -6,6 +6,8 @@ class CategoriesController < ApplicationController
   end
   
   def new
+    @categories = Category.all 
+    @locations = Location.all
     @category = Category.new
   end
   
@@ -21,6 +23,8 @@ class CategoriesController < ApplicationController
   end
   
   def create
+    @categories = Category.all 
+    @locations = Location.all
     @category = Category.new(category_params)
     if @category.save
       flash[:success] = "Created new category!"

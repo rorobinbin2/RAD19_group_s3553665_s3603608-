@@ -6,6 +6,8 @@ class LocationsController < ApplicationController
   end
   
   def new
+    @categories = Category.all 
+    @locations = Location.all
     @location = Location.new
   end
   
@@ -17,6 +19,8 @@ class LocationsController < ApplicationController
   end
   
   def create
+    @categories = Category.all 
+    @locations = Location.all
     @location = Location.new(location_params)
     if @location.save
       flash[:success] = "Created new Location!"

@@ -7,16 +7,8 @@
     <ul>
       <div align="left",style="width:20%;">
             <h4><strong>Contact us</strong></h3>
-            <%= form_for(:feedback, url:"/message") do |f| %>
-                <%= f.text_field:name,:placeholder=>"name",:style=>"
-                border-color: #878787;border-style: solid;border-top-width: 0px;
-                border-right-width: 0px;border-bottom-width: 1px;
-                     border-left-width: 0px;background:inherit;" %>
-                <%= f.text_field:email,:placeholder=>"email",:style=>"
-                border-color: #878787;border-style: solid;border-top-width: 0px;
-                border-right-width: 0px;border-bottom-width: 1px;
-                     border-left-width: 0px;background:inherit;" %>
-                <%= f.text_area:message,:placeholder=>"message",:style=>"
+            <%= form_for(:feedback, url: feedback_path) do |f| %>
+                <%= f.text_area :body ,:style=>"
                 border-color: #878787;border-style: solid;border-top-width: 0px;
                 border-right-width: 0px;border-bottom-width: 1px;
                      border-left-width: 0px;background:inherit;" %>
@@ -26,15 +18,15 @@
             <div style="margin:20px 0;">
                 <p style="margin:0">Tel:0123456789</p>
                 <p style="margin:0">Fax:0123456</p>
-                <p style="margin:0">junjiang.jiang@rmit.edu.au</p>  
+                <p style="margin:0">s3553665@rmit.edu.au</p>  
             </div>
         </div>   
          <div align="justify">
       <div style="width:20%;display:flex;flex-direction:column">
             <h4><strong>General inquires</strong></h3>
-            <a href="false;">Andy Song</a>
-            <a href="javascript(0);">Junliang Jiang</a>
-            <a href="javascript(0);">Ali</a>
+            <a href="#">Andy Song</a>
+            <a href="#">Junliang Jiang</a>
+            <a href="#">Ali</a>
         
         </div>
         <div style="width:20%;display:flex;flex-direction:column">
