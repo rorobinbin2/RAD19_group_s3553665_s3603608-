@@ -1,0 +1,66 @@
+<footer class="footer">
+ 
+ 
+
+ 
+  <nav>
+    <ul>
+<div class="row">
+        <div class="column">
+      <div align="left",style="width:20%;">
+            <h4><strong>Contact us</strong></h3>
+            <%= form_for(:feedback, url: feedback_path) do |f| %>
+                <%= f.text_area :body ,:style=>"
+                border-color: #878787;border-style: solid;border-top-width: 0px;
+                border-right-width: 0px;border-bottom-width: 1px;
+                     border-left-width: 0px;background:inherit;" %>
+                     <br>
+                <%= f.submit "Send", class:"btn" %>
+            <% end %>
+            <div style="margin:20px 0;">
+                <p style="margin:0">Tel:0123456789</p>
+                <p style="margin:0">Fax:0123456</p>
+                <p style="margin:0">s3553665@rmit.edu.au</p>  
+            </div>
+        </div>   
+       </div> 
+        
+        
+        
+        <div class="column">
+     <ul class=" general-inquires">
+            <h4><strong>General inquires</strong></h3>
+            <li><a href="https://www.rmit.edu.au/contact/staff-contacts/academic-staff/s/song-dr-andy">Andy Song</a></li>
+            <li><a href="javascript">Junliang Jiang</a></li>
+            <li><a href="javascript">Ali</a></li>
+        
+    </ul>
+    </div
+    
+    </div>
+      <div class="column">
+          <ul class=" useful-links">
+            <h4><strong>Useful Links</strong></h3>
+            <li><a href="https://www.rmit.edu.au/study-with-us">RMIT Course</a></li>
+            <li><a href="https://www.rmit.edu.au/students/support-and-facilities/it-services-for-students/service-and-support-centre">RMIT Help Desk</a></li>
+            <li><a href="https://www.rmit.edu.au/study-with-us/international-students">RMIT International</a></li>
+           </ul>
+     </div>
+        
+          <div class="column">
+         <ul class="social-media-list">
+             <h4><strong>Media</strong></h3>
+    <li><a href="https://twitter.com/"><img src="https://unpkg.com/simple-icons@latest/icons/twitter.svg" alt="Twitter" title="Twitter"></a></li>
+    <li><a href="https://github.com/"><img src="https://unpkg.com/simple-icons@latest/icons/github.svg" alt="GitHub" title="GitHub"></a></li>
+    <li><a href="https://www.facebook.com/"><img src="https://unpkg.com/simple-icons@1.9.27/icons/facebook.svg" alt="Facebook" title="Facebook"></a></a></li>
+    <li><a href="https://www.youtube.com/"><img src="https://unpkg.com/simple-icons@latest/icons/youtube.svg" alt="YouTube" title="YouTube"></a></li>
+    <li><a href="https://www.instagram.com/"><img src="https://unpkg.com/simple-icons@1.9.27/icons/instagram.svg" alt="Instagram" title="Instagram"></a></li>
+    <li><a href="https://www.skype.com/en/"><img src="https://unpkg.com/simple-icons@1.9.27/icons/skype.svg" alt="Skype" title="Skype"></a></li>
+</ul>
+
+        </div>
+ 
+   </div>
+    </ul>
+  </nav>
+</footer>

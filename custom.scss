@@ -1,0 +1,296 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+$blue: #084058;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* universal */
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+
+
+
+
+/* footer */
+
+.footer {
+    background-color: black;
+    color: black;
+    border-top: 1px solid red;
+    height: 50px;  /* footer height */
+    padding-top: 70px;
+    display: inline-block;
+    margin-top: 30px; /* space between content and footer */
+    box-sizing: border-box;
+    position: relative;
+    width: 100%;
+    clear: both;
+    margin-bottom: 5%;
+    padding-bottom: 9px;
+
+  
+}
+
+
+/* Style for the Contact us*/
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+/* Style for the Send*/
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+/* Button hover*/
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  height: 100%;
+  
+}
+
+.row:after {
+  content: 5;
+  display: table;
+  clear: both;
+}
+
+footer.general-inquires {
+  text-align:center
+}
+
+footer .useful-links {
+  text-align:center
+}
+footer .general-inquires {
+  text-align:center
+}
+
+
+
+/* Clear floats after the columns */
+
+footer .social-media-list
+{
+   text-align:center
+}
+
+ul.social-media-list img {
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightgreen;
+    width: 36px;
+    height: 36px;
+}
+
+ul.social-media-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+ul.social-media-list li {
+    display: inline-block;
+}
+
+ul.social-media-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0px; /* eliminate space between li */
+}
+ul.social-media-list li {
+    display: inline-block;
+    margin: 2px;
+}
+ul.social-media-list img:hover {
+    background-color: #63D1F4;
+}
+
+
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 400px;
+  @include box_sizing;
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* Users index */
+
+.users,.courses {
+  list-style: none;
+  li {
+    // border-radius: 50%;
+    text-align: center;
+    overflow: auto;
+    padding: 10px 0;
+  }
+}
+
+
+
+  
+  .nav.navbar-nav li a:hover {
+  color: gray;
+}
+
+
+
+
