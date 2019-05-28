@@ -7,7 +7,6 @@
 
     <div class="tab">
       <ul class="nav navbar-nav">
-       
        <li><a href="/courses">Course</a></li>
        <li><a href="/users">Coordinator</a></li>
       </ul>
@@ -24,13 +23,12 @@
    <div style="display:flex;margin:40px;">
     <div style="display:flex;flex-direction:column;width:200px">
       
-         <li>
+    <li>
     <%= link_to gravatar_for(course.user, size: 150), course.user %>
     </li>
     <h2>
      Coordinator name: <%= link_to course.user.name, course.user %>
     </h2>
-      
     </div>
 
     
@@ -55,7 +53,7 @@
     
     
 
-  <div style="text-align:right">
+    <div style="text-align:right">
         <% if logged_in? %>
           <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe,
           courses_like_path(:course_name =>  course.name), :method => :post %>
@@ -70,9 +68,10 @@
         <%= course.dislike %>
         <% end %>
 
-       </div>
-  </div>
-  </div>
+    </div>
+    </div>
+    </div>
+        <% if logged_in? %>
         <% if current_user.admin? || current_user?(course.user) %>
             <%= link_to "Edit", edit_course_path(course), class: "btn btn-primary" %>
         <% end %>
@@ -81,6 +80,7 @@
                                        data: { confirm: "You sure?" } %>
             <%= link_to "Reset votes", courses_vote_path(:course_name =>  course.name), :method => :post, class: "btn btn-primary",
                                        data: { confirm: "You sure?" } %>
-        <% end %>   
+        <% end %>  
+        <% end %>
   <% end %>
 </ul>

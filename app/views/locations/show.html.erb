@@ -73,6 +73,7 @@
        </div>
   </div>
   </div>
+        <% if logged_in? %>
         <% if current_user.admin? || current_user?(course.user) %>
             <%= link_to "Edit", edit_course_path(course), class: "btn btn-primary" %>
         <% end %>
@@ -82,5 +83,6 @@
             <%= link_to "Reset votes", courses_vote_path(:course_name =>  course.name), :method => :post, class: "btn btn-primary",
                                        data: { confirm: "You sure?" } %>
         <% end %>   
+        <% end %>
   <% end %>
 </ul>

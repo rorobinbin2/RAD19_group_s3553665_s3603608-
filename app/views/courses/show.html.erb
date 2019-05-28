@@ -8,7 +8,7 @@
   <div align="left">
    <div style="display:flex;margin:50px;">
     <div style="display:flex;flex-direction:column;width:200px">
-      <li>
+    <li>
     <%= link_to gravatar_for(@course.user, size: 150), @course.user %>
     </li>
     <h2>
@@ -35,35 +35,37 @@
         <%= @course.description %>
       </h2> 
       <% if logged_in? %>
-      <% if current_user.admin? || current_user?(@course.user) %>
-        <%= link_to "Edit", edit_course_path(@course), class: "btn btn-primary" %>
-      <% end %>
-      <% if current_user.admin? %>
+        <% if current_user.admin? || current_user?(@course.user) %>
+          <%= link_to "Edit", edit_course_path(@course), class: "btn btn-primary" %>
+        <% end %>
+        <% if current_user.admin? %>
         <%= link_to "Delete", @course, method: :delete, class: "btn btn-primary",
                                        data: { confirm: "You sure?" } %>
         <%= link_to "Reset votes", courses_vote_path(:course_name =>  @course.name), :method => :post, class: "btn btn-primary",
                                        data: { confirm: "You sure?" } %>
-      <% end %>
-    <% end %>  
+        <% end %>
+      <% end %>  
+      
       <div style="text-align:right">
         <% if logged_in? %>
           <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe,
           courses_like_path(:course_name =>  @course.name), :method => :post %>
-        <%= @course.like %>
+          <%= @course.like %>
           <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe,
           courses_dislike_path(:course_name =>  @course.name), :method => :post %>
-        <%= @course.dislike %>
+          <%= @course.dislike %>
         <% else %>  
-            <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe %>
-        <%= @course.like %>
-            <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe %>
-        <%= @course.dislike %>
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-up' style='margin-right:5px;'></icon>".html_safe %>
+          <%= @course.like %>
+          <%= link_to "<icon class='glyphicon glyphicon-thumbs-down' style='margin-right:5px;'></icon>".html_safe %>
+          <%= @course.dislike %>
         <% end %>
 
        </div>
       </div>      
       </div>
   </aside>
-</div>
-  </div>  
+  </div>
+</div>  
+
   <%= link_to "Return to all courses", courses_path, class: "btn btn-lg btn-primary" %>
