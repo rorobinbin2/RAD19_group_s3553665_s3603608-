@@ -1,41 +1,186 @@
-# Ruby on Rails Tutorial sample application
+# Rapid Application Assignment 2
 
-This is the sample application for
-[*Ruby on Rails Tutorial:
-Learn Web Development with Rails*](https://www.railstutorial.org/)
-by [Michael Hartl](http://www.michaelhartl.com/).
 
-## License
+## Development team 
 
-All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
-is available jointly under the MIT License and the Beerware License. See
-[LICENSE.md](LICENSE.md) for details.
+1. Supun Kwan     s3553665 
+2. Timothy Langi  s3603608
 
-## Getting started
+## The highest level attempted
 
-To get started with the app, clone the repo and then install the needed gems:
+  HD level
 
+## Hours spent 
+
+1. Supun Kwan     s3553665  51 hours
+2. Timothy Langi  s3603608  140 hours
+
+## Heroku link 
+
+https://rad-2019.herokuapp.com/ << URL 
+
+Logs
 ```
-$ bundle install --without production
+-----> Ruby app detected
+-----> Compiling Ruby/Rails
+-----> Using Ruby version: ruby-2.5.3
+-----> Installing dependencies using bundler 1.15.2
+       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+       Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.17.2). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+       Fetching gem metadata from https://rubygems.org/........
+       Fetching version metadata from https://rubygems.org/..
+       Fetching dependency metadata from https://rubygems.org/.
+       Using rake 12.3.2
+       Using CFPropertyList 2.3.6
+       Using concurrent-ruby 1.1.5
+       Using minitest 5.10.3
+       Using thread_safe 0.3.6
+       Using builder 3.2.3
+       Using erubi 1.8.0
+       Using mini_portile2 2.4.0
+       Using crass 1.0.4
+       Using rack 2.0.7
+       Using nio4r 2.3.1
+       Using websocket-extensions 0.1.3
+       Using mini_mime 1.0.1
+       Using arel 8.0.0
+       Using execjs 2.7.0
+       Using bcrypt 3.1.12
+       Using rb-fsevent 0.10.3
+       Using ffi 1.10.0
+       Using bundler 1.15.2
+       Using mime-types-data 3.2019.0331
+       Using coffee-script-source 1.12.2
+       Using method_source 0.9.2
+       Using thor 0.20.3
+       Using unf_ext 0.0.7.6
+       Using dry-inflector 0.1.2
+       Using excon 0.64.0
+       Using formatador 0.2.5
+       Using multi_json 1.13.1
+       Using ipaddress 0.8.3
+       Using xml-simple 1.1.5
+       Using json 2.2.0
+       Using netrc 0.11.0
+       Using optimist 3.0.0
+       Using xmlrpc 0.3.0
+       Using mini_magick 4.7.0
+       Using pg 0.20.0
+       Using puma 3.9.1
+       Using tilt 2.0.9
+       Using turbolinks-source 5.2.0
+       Using fission 0.5.0
+       Using i18n 1.6.0
+       Using nokogiri 1.10.3
+       Using tzinfo 1.2.5
+       Using rack-test 1.1.0
+       Using sprockets 3.7.2
+       Using websocket-driver 0.6.5
+       Using autoprefixer-rails 9.5.1.1
+       Using uglifier 3.2.0
+       Using rb-inotify 0.10.0
+       Using mail 2.7.1
+       Using mime-types 3.2.2
+       Using coffee-script 2.4.1
+       Using unf 0.1.4
+       Using fog-core 1.45.0
+       Using ovirt-engine-sdk 4.3.0
+       Using turbolinks 5.0.1
+       Using loofah 2.2.3
+       Using rbvmomi 2.1.2
+       Using activesupport 5.1.6
+       Using sass-listen 4.0.0
+       Using domain_name 0.5.20180417
+       Using rails-html-sanitizer 1.0.4
+       Using fog-json 1.2.0
+       Using fog-xml 0.1.3
+       Using fog-local 0.6.0
+       Using fog-vmfusion 0.1.0
+       Using globalid 0.4.2
+       Using activemodel 5.1.6
+       Using jbuilder 2.7.0
+       Using rails-dom-testing 2.0.3
+       Using sass 3.7.4
+       Using http-cookie 1.0.3
+       Using fog-aliyun 0.3.3
+       Using fog-brightbox 0.16.1
+       Using fog-dnsimple 1.0.0
+       Using fog-joyent 0.0.1
+       Using fog-openstack 0.3.10
+       Using fog-profitbricks 4.1.1
+       Using fog-sakuracloud 1.7.5
+       Using fog-serverlove 0.1.2
+       Using fog-softlayer 1.1.4
+       Using fog-storm_on_demand 0.1.1
+       Using fog-atmos 0.1.0
+       Using fog-aws 2.0.1
+       Using fog-cloudatcost 0.1.2
+       Using fog-digitalocean 0.4.0
+       Using fog-dynect 0.0.3
+       Using fog-ecloud 0.3.0
+       Using fog-google 0.1.0
+       Using fog-internet-archive 0.0.1
+       Using fog-powerdns 0.2.0
+       Using fog-rackspace 0.1.6
+       Using fog-radosgw 0.0.5
+       Using fog-riakcs 0.1.0
+       Using fog-terremark 0.1.0
+       Using fog-voxel 0.1.0
+       Using fog-xenserver 1.0.0
+       Using fog-vsphere 3.0.0
+       Using activejob 5.1.6
+       Using activerecord 5.1.6
+       Using carrierwave 1.2.2
+       Using rest-client 2.0.2
+       Using actionview 5.1.6
+       Using bootstrap-sass 3.3.7
+       Using actionpack 5.1.6
+       Using rbovirt 0.1.7
+       Using actioncable 5.1.6
+       Using actionmailer 5.1.6
+       Using railties 5.1.6
+       Using sprockets-rails 3.2.1
+       Using fog-ovirt 1.2.0
+       Using fog 1.42.0
+       Using coffee-rails 4.2.2
+       Using jquery-rails 4.3.1
+       Using rails 5.1.6
+       Using sass-rails 5.0.6
+       Bundle complete! 26 Gemfile dependencies, 116 gems now installed.
+       Gems in the groups development and test were not installed.
+       Bundled gems are installed into ./vendor/bundle.
+       Bundle completed (4.22s)
+       Cleaning up the bundler cache.
+       Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.17.2). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+       The latest bundler is 2.0.1, but you are currently running 1.15.2.
+       To update, run `gem install bundler`
+-----> Installing node-v10.14.1-linux-x64
+-----> Detecting rake tasks
+-----> Preparing app for Rails asset pipeline
+       Running: rake assets:precompile
+       Yarn executable was not detected in the system.
+       Download Yarn at https://yarnpkg.com/en/docs/install
+       I, [2019-05-28T13:08:58.149227 #368]  INFO -- : Writing /tmp/build_7c1e2c2a41114f0bd29f3ff7d726b57b/public/assets/application-22424a223cf53028dccb8b3d00fa9b93f09201c8d6100daeaeee52bd7896e463.css
+       I, [2019-05-28T13:08:58.149874 #368]  INFO -- : Writing /tmp/build_7c1e2c2a41114f0bd29f3ff7d726b57b/public/assets/application-22424a223cf53028dccb8b3d00fa9b93f09201c8d6100daeaeee52bd7896e463.css.gz
+       Asset precompilation completed (8.86s)
+       Cleaning assets
+       Running: rake assets:clean
+-----> Detecting rails configuration
+###### WARNING:
+       You have not declared a Ruby version in your Gemfile.
+       To set your Ruby version add this line to your Gemfile:
+       ruby '2.5.3'
+       # See https://devcenter.heroku.com/articles/ruby-versions for more information.
+###### WARNING:
+       No Procfile detected, using the default web server.
+       We recommend explicitly declaring how to boot your server process via a Procfile.
+       https://devcenter.heroku.com/articles/ruby-default-web-server
+-----> Discovering process types
+       Procfile declares types     -> (none)
+       Default types for buildpack -> console, rake, web
+-----> Compressing...
+       Done: 43.8M
+-----> Launching...
+       Released v10
+       https://rad-2019.herokuapp.com/ deployed to Heroku
 ```
-
-Next, migrate the database:
-
-```
-$ rails db:migrate
-```
-
-Finally, run the test suite to verify that everything is working correctly:
-
-```
-$ rails test
-```
-
-If the test suite passes, you'll be ready to run the app in a local server:
-
-```
-$ rails server
-```
-
-For more information, see the
-[*Ruby on Rails Tutorial* book](https://www.railstutorial.org/book).
