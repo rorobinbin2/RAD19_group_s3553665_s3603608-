@@ -4,6 +4,8 @@ class FeedbacksController < ApplicationController
     @feedback = Feedback.new(feedback_params)
      if @feedback.save
        FeedbackMailer.feedback(@feedback).deliver
+       flash[:success] = "Feedback sent"
+       reload
      end
     end
     
