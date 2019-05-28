@@ -2,8 +2,9 @@ class FeedbacksController < ApplicationController
     
     def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.save
-    FeedbackMailer.feedback(@feedback).deliver_now
+     if @feedback.save
+       FeedbackMailer.feedback(@feedback).deliver
+     end
     end
     
     private

@@ -1,5 +1,6 @@
-<h1>Feedback#feedback</h1>
-
 <p>
-  <%= @greeting %>, find me in app/views/feedback_mailer/feedback.html.erb
+A new feedback was sent to you:
 </p>
+<blockquote>
+<em><%= @feedback.body %></em>
+</blockquote>

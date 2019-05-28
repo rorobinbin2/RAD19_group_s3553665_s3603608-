@@ -8,7 +8,7 @@ class FeedbackMailer < ApplicationMailer
   def feedback(feedback)
     @feedback = feedback
 
-    mail to: "s3553665@student.rmit.edu.au",
+    mail to: "robin_nnn@hotmail.com",
     subject: "Received feedback"
   end
 end
